@@ -14,8 +14,8 @@ public class Category {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	Integer id;
 	String name;
-	@OneToMany(mappedBy ="category")
-	@JsonIgnore
+	@OneToMany(mappedBy ="category", cascade = CascadeType.ALL,fetch=FetchType.LAZY)
+	
 	List<ItemTypes> types;
 	public Integer getId() {
 		return id;
@@ -35,4 +35,15 @@ public class Category {
 	public void setTypes(List<ItemTypes> types) {
 		this.types = types;
 	}
+	
+	public Category(Integer id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+		
+	}
+	public Category() {
+		
+	}
+	
 }

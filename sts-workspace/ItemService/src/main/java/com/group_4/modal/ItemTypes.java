@@ -3,6 +3,7 @@ package com.group_4.modal;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,10 +21,21 @@ public class ItemTypes {
 	Integer id;
 	String name;
 	
-	@ManyToOne()
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn
 	@JsonIgnore
-	Category category;
+	private Category category;
+	
+	public ItemTypes() {
+		
+	}
+
+	public ItemTypes(Integer id, String name, Integer cid) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.category = new Category(cid,"");
+	}
 
 	public Integer getId() {
 		return id;
