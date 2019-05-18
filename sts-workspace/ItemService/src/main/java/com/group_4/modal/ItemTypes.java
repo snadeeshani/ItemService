@@ -20,7 +20,7 @@ public class ItemTypes {
 	Integer id;
 	String name;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne()
 	@JoinColumn
 	@JsonIgnore
 	Category category;
