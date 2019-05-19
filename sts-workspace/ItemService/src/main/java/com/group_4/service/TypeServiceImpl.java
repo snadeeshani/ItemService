@@ -20,6 +20,7 @@ public class TypeServiceImpl implements TypeService {
 	@Autowired
 	TypeRepository typeRepository;
 	
+	@Override
 	public List <ItemTypes> getAllTypes(Integer cid)
 	{
 		List<ItemTypes> types= new ArrayList<>();
@@ -27,6 +28,7 @@ public class TypeServiceImpl implements TypeService {
 		return types;
 	}
 	
+	@Override
 	public Optional<ItemTypes> getItemTypes(Integer id)
 	{
 		return typeRepository.findById(id);
@@ -37,8 +39,19 @@ public class TypeServiceImpl implements TypeService {
 	{
 		typeRepository.save(itemTypes);
 	}
-
 	
+	 
+	@Override
+	public void updateType(ItemTypes itemTypes)
+	{
+		typeRepository.save(itemTypes);
+	}
+	
+	@Override
+	public void deleteType(Integer id)
+	{
+		typeRepository.deleteById(id);
+	}
 	
 	
 	
