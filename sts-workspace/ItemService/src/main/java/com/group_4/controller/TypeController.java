@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,7 +39,8 @@ public class TypeController {
 		return typeService.getAllTypes(cid);
 	}
 	
-	@RequestMapping(value="category/{cid}/itemtype/{id}", method=RequestMethod.GET)	
+	
+	@RequestMapping(value="itemtype/{id}", method=RequestMethod.GET)	
 	public Optional<ItemTypes> getItemType(@PathVariable Integer id)
 	{
 		return typeService.getItemTypes(id);

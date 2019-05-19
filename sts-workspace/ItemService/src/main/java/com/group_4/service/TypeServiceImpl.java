@@ -55,23 +55,6 @@ public class TypeServiceImpl implements TypeService {
 	
 	
 	
-
-//	@Override
-//	public ItemTypes save(ItemTypes itemTypes, Integer cid) {
-//		
-//		try {
-//			return categoryRepository.findById(cid)
-//					.map(category ->{
-//						itemTypes.setCategory(category);
-//						return typeRepository.save(itemTypes);
-//					}).orElseThrow(() -> new NotFoundException("Category is not found!"));
-//		} catch (NotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		return itemTypes;
-// }
-
 	
 
 	
